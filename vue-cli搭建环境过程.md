@@ -301,7 +301,8 @@ serve -s dist
 - 优化向：单页应用多路由预渲染指南： https://juejin.im/post/59d49d976fb9a00a571d651d
 - Vue项目预渲染机制引入实践 ： https://juejin.im/post/5b8ba25751882542f25a6cc8
 - vue-cli3-optimization： https://github.com/HaoChuan9421/vue-cli3-optimization
-- 从头开始用webpack4搭建vue/react环境： https://juejin.im/post/5c7f4fb3f265da2dd1688dbe
+- 从头开始用webpack4搭建vue/react环境： https://juejin.im/post/5c7f4fb3f265da2dd1688dbe 
+- yarn or npm : https://www.ryadel.com/en/yarn-vs-npm-pnpm-2019/
 
 
 
