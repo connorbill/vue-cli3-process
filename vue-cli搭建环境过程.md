@@ -198,6 +198,10 @@ export default {
 
 - Gzip 优化
 
+```js
+//  开启nginx的gzip_static on;选项， 如果gzip_static设置为on,那么就会使用同名的.gz文件，不会占用服务器的CPU资源去压缩。
+```
+
 - 路由懒加载(按需加载)
 
 - Prerender 首页预渲染
