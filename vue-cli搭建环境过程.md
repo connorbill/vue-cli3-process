@@ -192,6 +192,8 @@ export default {
 
 ## 四 其他优化
 
+见vue-cli3-optimization： https://github.com/HaoChuan9421/vue-cli3-optimization
+
 - cdn optimization /CDN 优化
 
 - Gzip 优化
