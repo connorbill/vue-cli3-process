@@ -7,10 +7,13 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:e2e": "vue-cli-service test:e2e",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "format": "onchange 'test/**/*.js' 'src/**/*.js' 'src/**/*.vue' -- prettier --write {{changed}}"
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "onchange": "^6.0.0",
+    "style-resources-loader": "^1.2.1",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
@@ -26,13 +29,18 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
+    "chalk": "^2.4.2",
+    "compression-webpack-plugin": "^3.0.0",
     "eslint": "^5.16.0",
+    "eslint-config-prettier": "^6.1.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-vue": "^5.0.0",
     "lint-staged": "^8.1.5",
     "node-sass": "^4.9.0",
+    "prerender-spa-plugin": "^3.4.0",
     "prettier": "^1.18.2",
     "sass-loader": "^7.1.0",
+    "vue-svg-loader": "^0.12.0",
     "vue-template-compiler": "^2.6.10"
   },
   "gitHooks": {
