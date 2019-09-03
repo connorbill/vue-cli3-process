@@ -2,6 +2,8 @@ const path = require("path");
 const chalk = require("chalk");
 const CompressionWebpackPlugin = require("compression-webpack-plugin");
 const PrerenderSPAPlugin = require("prerender-spa-plugin");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+  .BundleAnalyzerPlugin;
 
 // 存放build结果的文件夹(主要是为了填prerender在配置了baseUrl后带来的坑,下面会说)
 const DIST_ROOT = "dist";
@@ -155,6 +157,8 @@ module.exports = {
       myConfig.devServer = {
         disableHostCheck: true
       };
+      myConfig.plugins = [];
+      myConfig.plugins.push(new BundleAnalyzerPlugin());
     }
     return myConfig;
   }

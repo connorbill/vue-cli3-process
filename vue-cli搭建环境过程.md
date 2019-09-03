@@ -264,6 +264,26 @@ new Vue({
 
 ```
 
+## 打包分析插件
+
+```shell
+npm install webpack-bundle-analyzer -D
+```
+```js
+// vue.config.js
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+
+module.exports = {
+  configureWebpack: {
+    plugins: [
+      new BundleAnalyzerPlugin()
+      // 其他 plugins ...
+    ]
+  }
+};
+```
+
+
 ## 本地预览效果
 
 ```shell
