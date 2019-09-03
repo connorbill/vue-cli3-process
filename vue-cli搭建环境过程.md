@@ -282,6 +282,25 @@ module.exports = {
   }
 };
 ```
+```shell
+// 查看打包体积分布
+npm run bundle:analysis
+```
+
+## 输出生产资源
+- 为了提升静态资源访问速度，降低主域名下服务器的流量压力，我们通常会将静态资源从主域名下剥离出来，托管在 CDN 上。这种情况下，相对路径无法工作。我们要在配置中指定 publicPath 以指定静态资源的域名。
+
+```shell
+// vue.config.js
+module.exports = {
+  //..
+  publicPath: process.env.NODE_ENV === "production" ? "//some.cdn.com" : "/",
+};
+
+<!-- dist/html 文件内注入的脚本 -->
+<script src=//some.cdn.com/js/chunk-vendors.f4718524.js></script>
+<script src=//some.cdn.com/js/app.84426696.js></script>
+```
 
 
 ## 本地预览效果

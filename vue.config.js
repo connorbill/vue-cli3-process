@@ -5,6 +5,7 @@ const PrerenderSPAPlugin = require("prerender-spa-plugin");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
 
+const publicPath = process.env.NODE_ENV === "production" ? "/" : "/";
 // 存放build结果的文件夹(主要是为了填prerender在配置了baseUrl后带来的坑,下面会说)
 const DIST_ROOT = "dist";
 // 项目部署在服务器里的绝对路径，默认'/'，参考https://cli.vuejs.org/zh/config/#baseurl
@@ -29,22 +30,23 @@ const externals = {
 const cdn = {
   // 开发环境
   dev: {
-    css: ["https://unpkg.com/element-ui/lib/theme-chalk/index.css"],
+    css: [publicPath + "static/element-index.css"],
     js: []
   },
   // 生产环境
   build: {
-    css: ["https://unpkg.com/element-ui/lib/theme-chalk/index.css"],
+    css: [publicPath + "static/element-index.css"],
     js: [
-      "https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js",
-      "https://cdn.jsdelivr.net/npm/vue-router@3.0.1/dist/vue-router.min.js",
-      "https://cdn.jsdelivr.net/npm/vuex@3.0.1/dist/vuex.min.js",
-      "https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js",
-      "https://unpkg.com/element-ui/lib/index.js"
+      publicPath + "static/vue.min.js",
+      publicPath + "static/vue-router.min.js",
+      publicPath + "static/vuex.min.js",
+      publicPath + "static/axios.min.js",
+      publicPath + "static/element-index.js"
     ]
   }
 };
 module.exports = {
+  publicPath: publicPath,
   productionSourceMap: false,
   chainWebpack: config => {
     const types = ["vue-modules", "vue", "normal-modules", "normal"];
@@ -93,9 +95,14 @@ module.exports = {
       }
     }
   },
-  configureWebpack: config => {
-    const myConfig = {};
-    if (process.env.NODE_ENV === "production") {
+  configureWebpack: () => {
+    const myConfig = {
+      plugins: []
+    };
+    if (
+      process.env.NODE_ENV === "production" ||
+      process.env.VUE_APP_TYPE === "analysis"
+    ) {
       // 1. 生产环境npm包转CDN
       myConfig.externals = externals;
       // 2. 使用预渲染，在仅加载html和css之后即可显示出基础的页面，提升用户体验，避免白屏
@@ -149,6 +156,8 @@ module.exports = {
             minRatio: 0.8
           })
         );
+      // 打包分析
+      myConfig.plugins.push(new BundleAnalyzerPlugin());
     }
     if (process.env.NODE_ENV === "development") {
       /**
@@ -157,8 +166,11 @@ module.exports = {
       myConfig.devServer = {
         disableHostCheck: true
       };
-      myConfig.plugins = [];
-      myConfig.plugins.push(new BundleAnalyzerPlugin());
+      // console.log(process.env.VUE_APP_TYPE)
+      // myConfig.plugins = [];
+      // if (process.env.VUE_APP_TYPE === "analysis") {
+      //   myConfig.plugins.push(new BundleAnalyzerPlugin());
+      // }
     }
     return myConfig;
   }
