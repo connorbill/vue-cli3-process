@@ -105,6 +105,17 @@ module.exports = {
   eslint(https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
   prettier(https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
   快捷键：CMD/CTRL + Shift + P  或者 shift+alt + f
+  
+- 使用eslint-config-elemefe 校验插件
+```shell
+// 此处html和json插件不是必须的
+yarn add eslint-config-elemefe eslint-plugin-html eslint-plugin-json -D
+```
+```js
+// .eslintrc.js 增加选项
+plugins: ["html", "json"],
+extends: [ "elemefe"]
+```
 
 
 ## 三 根据vue-cli3文档配置

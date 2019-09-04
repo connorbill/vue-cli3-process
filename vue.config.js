@@ -80,6 +80,14 @@ module.exports = {
       }
       return args;
     });
+    // 配置vue,js文件eslint不符合规则，中断编译
+    // config.module
+    //   .rule("eslint-vue")
+    //   .test(/\.(vue|js|jsx)$/)
+    //   .use("eslint-loader")
+    //   .loader("eslint-loader")
+    //   .set("enforce", "pre")
+    //   .end();
   },
   css: {
     loaderOptions: {

@@ -8,11 +8,11 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-import NavShop from "../assets/images/svg/NavShop.svg";
+import HelloWorld from '@/components/HelloWorld.vue';
+import NavShop from '../assets/images/svg/NavShop.svg';
 
 export default {
-  name: "home",
+  name: 'Home',
   components: {
     HelloWorld,
     NavShop
