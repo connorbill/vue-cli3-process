@@ -1,24 +1,24 @@
-const rules = require('./rules');
+
 module.exports = {
   root: true,
   env: {
     node: true
   },
-  plugins: ["vue", "json","prettier"],
-  extends: [ "plugin:vue/recommended", "eslint:recommended"],
+  plugins: [],
+  extends: [],
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
-    "prettier/prettier": ["error"],
-    "no-restricted-globals": ["error", "event", "fdescribe"]
+    // "prettier/prettier": ["error"],
+    // "no-restricted-globals": ["error", "event", "fdescribe"]
   },
   parserOptions: {
-    "parser": "babel-eslint",
-    "ecmaVersion": 2017,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
+    // "parser": "babel-eslint",
+    // "ecmaVersion": 2017,
+    // "sourceType": "module",
+    // "ecmaFeatures": {
+    //   "jsx": true
+    // }
   },
   overrides: [
     {
