@@ -270,6 +270,9 @@ serve -s dist
 
 ```
 
+## vue风格指南
+
+- https://cn.vuejs.org/v2/style-guide/index.html
 
 ### 相关文章：
 - 使用vue-cli3有什么好处：https://github.com/vuejs/vue-cli/issues/2796
