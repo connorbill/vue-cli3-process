@@ -11,8 +11,8 @@ module.exports = {
     "prettier"
   ],
   extends: [
-    "plugin:vue/recommended",
     "prettier",
+    "plugin:vue/recommended",
     // "plugin:prettier/recommended",
   ],
   rules: {
@@ -22,7 +22,7 @@ module.exports = {
   },
   parserOptions: {
     "parser": "babel-eslint",
-    // "ecmaVersion": 2017,
+    "ecmaVersion": 2018,
     "sourceType": "module",
     // "ecmaFeatures": {
     //   "jsx": true
