@@ -62,6 +62,21 @@ w keys)
 
 - 见（https://juejin.im/post/5b27a326e51d45588a7dac57）
 
+- vscode 代码格式提示配置
+
+```js
+{
+    "eslint.validate": [ 
+        "javascript", 
+        "javascriptreact", 
+        { 
+            "language": "vue", 
+            // "autoFix": true 
+        } 
+    ]
+}
+```
+
 
 
 ## 三 根据vue-cli3文档配置
