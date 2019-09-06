@@ -289,6 +289,8 @@ serve -s dist
 
 - https://cn.vuejs.org/v2/style-guide/index.html
 
+## 使用yarn安装包
+
 ### 相关文章：
 - 使用vue-cli3有什么好处：https://github.com/vuejs/vue-cli/issues/2796
 - 使用ESLint+Prettier来统一前端代码风格：https://juejin.im/post/5b27a326e51d45588a7dac57
