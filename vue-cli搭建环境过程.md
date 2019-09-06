@@ -60,7 +60,7 @@ w keys)
 
 ##  二 代码格式化和统一规范
 
-- 见（https://juejin.im/post/5b27a326e51d45588a7dac57）
+
 
 - vscode 代码格式提示配置
 
