@@ -22,8 +22,8 @@ const cdn = {
   dev: {
     css: [],
     js: [
-      '//shadow.elemecdn.com/npm/vue@2.5.16/dist/vue.runtime.js',
-      '//shadow.elemecdn.com/npm/vue-router@3.0.1/dist/vue-router.js',
+      '//cdn.jsdelivr.net/npm/vue/dist/vue.js',
+      '//unpkg.com/vue-router@3.1.3/dist/vue-router.js',
       '//unpkg.com/vuex@3.1.1/dist/vuex.js'
     ]
   },
@@ -31,8 +31,8 @@ const cdn = {
   build: {
     css: [],
     js: [
-      '//shadow.elemecdn.com/npm/vue@2.5.16/dist/vue.runtime.min.js',
-      '//shadow.elemecdn.com/npm/vue-router@3.0.1/dist/vue-router.min.js',
+      '//cdn.jsdelivr.net/npm/vue/dist/vue.min.js',
+      '//unpkg.com/vue-router@3.1.3/dist/vue-router.min.js',
       '//unpkg.com/vuex@3.1.1/dist/vuex.min.js'
     ]
   }
@@ -41,6 +41,9 @@ const cdn = {
 module.exports = {
   publicPath: publicPath,
   productionSourceMap: false,
+  devServer: {
+    open: true
+  },
   chainWebpack: config => {
     // 所有组件中导入一些文件，不用每个组件都引入一个东西，估计用的少
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal'];
