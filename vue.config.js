@@ -5,8 +5,8 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
 
 // 假设 http://localhost:5000 为 cdn 域名
-const publicPath =
-  process.env.NODE_ENV === 'production' ? 'http://localhost:5000' : '/';
+const cdnUrl = 'http://192.168.60.20:5000';
+const publicPath = process.env.NODE_ENV === 'production' ? cdnUrl : '/';
 // 是否使用gzip
 const productionGzip = true;
 // 需要gzip压缩的文件后缀
@@ -22,22 +22,28 @@ const cdn = {
   dev: {
     css: [],
     js: [
-      '//cdn.jsdelivr.net/npm/vue/dist/vue.js',
-      '//unpkg.com/vue-router@3.1.3/dist/vue-router.js',
-      '//unpkg.com/vuex@3.1.1/dist/vuex.js'
+      // '//cdn.jsdelivr.net/npm/vue/dist/vue.js',
+      // '//unpkg.com/vue-router@3.1.3/dist/vue-router.js',
+      // '//unpkg.com/vuex@3.1.1/dist/vuex.js',
+      '/static/js/vue.js',
+      '/static/js/vue-router.js',
+      '/static/js/vuex.js'
     ]
   },
   // 生产环境
   build: {
     css: [],
     js: [
-      '//cdn.jsdelivr.net/npm/vue/dist/vue.min.js',
-      '//unpkg.com/vue-router@3.1.3/dist/vue-router.min.js',
-      '//unpkg.com/vuex@3.1.1/dist/vuex.min.js'
+      // '//cdn.jsdelivr.net/npm/vue/dist/vue.min.js',
+      // '//unpkg.com/vue-router@3.1.3/dist/vue-router.min.js',
+      // '//unpkg.com/vuex@3.1.1/dist/vuex.min.js'
+      publicPath + '/static/js/vue.min.js',
+      publicPath + '/static/js/vue-router.min.js',
+      publicPath + '/static/js/vuex.min.js'
     ]
   }
 };
-
+console.log(publicPath)
 module.exports = {
   publicPath: publicPath,
   productionSourceMap: false,

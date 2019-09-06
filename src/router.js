@@ -3,10 +3,13 @@ import Router from 'vue-router';
 import Home from './views/Home.vue';
 
 Vue.use(Router);
-
+console.log(process.env);
 export default new Router({
   mode: 'history',
-  base: process.env.BASE_URL,
+  // base: process.env.BASE_URL,
+
+  // 设置baseUrl 不与vue.config.js 的 publicPath
+  base: '/',
   routes: [
     {
       path: '/',

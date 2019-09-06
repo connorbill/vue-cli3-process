@@ -517,7 +517,7 @@
   dependencies:
     regenerator-transform "^0.14.0"
 
-"@babel/plugin-transform-runtime@^7.4.0":
+"@babel/plugin-transform-runtime@^7.4.0", "@babel/plugin-transform-runtime@^7.5.5":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-runtime/-/plugin-transform-runtime-7.5.5.tgz#a6331afbfc59189d2135b2e09474457a8e3d28bc"
   integrity sha512-6Xmeidsun5rkwnGfMOp6/z9nSzWpHFNVr2Jx7kwoq4mVatQfQx5S56drBgEHF+XQbKOdIaOiMIINvp/kAwMN+w==
@@ -630,7 +630,7 @@
     core-js "^2.6.5"
     regenerator-runtime "^0.13.2"
 
-"@babel/runtime@^7.0.0":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.5.5":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.5.5.tgz#74fba56d35efbeca444091c7850ccd494fd2f132"
   integrity sha512-28QvEGyQyNkB0/m2B4FU7IEZGK2NUrcMtT6BZEFALTguLk+AUT6ofsHtPk5QyjAdUkpMJ+/Em+quwz4HOt30AQ==
@@ -1741,6 +1741,15 @@ babel-plugin-transform-strict-mode@^6.24.1:
   dependencies:
     babel-runtime "^6.22.0"
     babel-types "^6.24.1"
+
+babel-polyfill@^6.26.0:
+  version "6.26.0"
+  resolved "https://registry.yarnpkg.com/babel-polyfill/-/babel-polyfill-6.26.0.tgz#379937abc67d7895970adc621f284cd966cf2153"
+  integrity sha1-N5k3q8Z9eJWXCtxiHyhM2WbPIVM=
+  dependencies:
+    babel-runtime "^6.26.0"
+    core-js "^2.5.0"
+    regenerator-runtime "^0.10.5"
 
 babel-preset-jest@^23.2.0:
   version "23.2.0"
@@ -8718,6 +8727,11 @@ regenerate@^1.2.1, regenerate@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.4.0.tgz#4a856ec4b56e4077c557589cae85e7a4c8869a11"
   integrity sha512-1G6jJVDWrt0rK99kBjvEtziZNCICAuvIPkSiUFIQxVP06RCVpq3dmDo2oi6ABpYaDYaTRr67BEhL8r1wgEZZKg==
+
+regenerator-runtime@^0.10.5:
+  version "0.10.5"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.10.5.tgz#336c3efc1220adcedda2c9fab67b5a7955a33658"
+  integrity sha1-M2w+/BIgrc7dosn6tntaeVWjNlg=
 
 regenerator-runtime@^0.11.0:
   version "0.11.1"

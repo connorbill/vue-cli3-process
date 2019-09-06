@@ -11,12 +11,14 @@
     "analysis:build": "vue-cli-service build --mode analysis"
   },
   "dependencies": {
+    "@babel/runtime": "^7.5.5",
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.5.5",
     "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-plugin-eslint": "^3.11.0",
     "@vue/cli-plugin-unit-jest": "^3.11.0",
@@ -26,6 +28,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
+    "babel-polyfill": "^6.26.0",
     "compression-webpack-plugin": "^3.0.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^6.1.0",
